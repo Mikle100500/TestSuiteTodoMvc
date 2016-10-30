@@ -1,9 +1,9 @@
 package todomvc;
 
-import com.todomvc.pages.testpage.TaskManagerPage;
 import org.junit.Test;
+import todomvc.pages.testpage.TaskManagerPage;
 
-import static com.todomvc.helpers.Preconditions.precondition;
+import static todomvc.helpers.Preconditions.precondition;
 
 
 public class TodoMVCIntegrationTest {
