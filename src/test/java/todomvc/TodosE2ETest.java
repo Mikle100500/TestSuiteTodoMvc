@@ -6,7 +6,7 @@ import todomvc.pages.testpage.TaskManagerPage;
 import static todomvc.helpers.Preconditions.precondition;
 
 
-public class TodoMVCIntegrationTest {
+public class TodosE2ETest {
 
     private TaskManagerPage page = new TaskManagerPage();
 
