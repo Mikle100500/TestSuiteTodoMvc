@@ -1,16 +1,19 @@
 package todomvc;
 
 import org.junit.Test;
-import todomvc.pages.testpage.TaskManagerPage;
+import org.junit.experimental.categories.Category;
+import todomvc.Categories.Smoke;
+import todomvc.pages.TaskManagerPage;
 
 import static todomvc.helpers.Preconditions.precondition;
 
 
-public class TodosE2ETest {
+public class TodosE2ETest extends BaseTest{
 
     private TaskManagerPage page = new TaskManagerPage();
 
     @Test
+    @Category(Smoke.class)
     public void testTasksCommonFlow() {
 
         precondition().prepare();

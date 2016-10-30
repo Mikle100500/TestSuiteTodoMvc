@@ -1,12 +1,14 @@
 package todomvc;
 
 import org.junit.Test;
-import todomvc.pages.testpage.TaskManagerPage;
+import org.junit.experimental.categories.Category;
+import todomvc.Categories.Buggy;
+import todomvc.pages.TaskManagerPage;
 
 import static todomvc.helpers.Preconditions.precondition;
 
 
-public class TodosOperationsAtAllFilterTest {
+public class TodosOperationsAtAllFilterTest extends BaseTest{
 
     private TaskManagerPage page = new TaskManagerPage();
 
@@ -99,14 +101,17 @@ public class TodosOperationsAtAllFilterTest {
         page.assertItemsLeft(2);
     }
 
+    //buggy test
+
     @Test
+    @Category(Buggy.class)
     public void testCancelEditByEsc() {
 
         precondition().completedTasks("a").atAllFilter().prepare();
 
         page.startEdit("a", "a edited").pressEscape();
         page.assertVisibleTasks("a");
-        page.assertItemsLeft(0);
+        page.assertItemsLeft(1);
     }
 
     @Test
