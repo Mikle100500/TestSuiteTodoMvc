@@ -1,4 +1,4 @@
-package todomvc.pages;
+package com.todomvc.pages;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;

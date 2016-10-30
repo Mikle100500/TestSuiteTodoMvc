@@ -1,4 +1,4 @@
-package todomvc.helpers;
+package com.todomvc.helpers;
 
 import java.util.ArrayList;
 import java.util.List;

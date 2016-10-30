@@ -1,11 +1,10 @@
-package todomvc;
+package com.todomvc;
 
+import com.todomvc.categories.Buggy;
+import com.todomvc.helpers.Preconditions;
+import com.todomvc.pages.TaskManagerPage;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
-import todomvc.categories.Buggy;
-import todomvc.pages.TaskManagerPage;
-
-import static todomvc.helpers.Preconditions.precondition;
 
 
 public class TodosOperationsAtAllFilterTest extends BaseTest {
@@ -15,7 +14,7 @@ public class TodosOperationsAtAllFilterTest extends BaseTest {
     @Test
     public void testCreate() {
 
-        precondition().atAllFilter().prepare();
+        Preconditions.precondition().atAllFilter().prepare();
 
         page.create("a");
         page.assertTasks("a");
@@ -25,7 +24,7 @@ public class TodosOperationsAtAllFilterTest extends BaseTest {
     @Test
     public void testEdit() {
 
-        precondition().activeTasks("a").atAllFilter().prepare();
+        Preconditions.precondition().activeTasks("a").atAllFilter().prepare();
 
         page.startEdit("a", "a edited").pressEnter();
         page.assertTasks("a edited");
@@ -35,7 +34,7 @@ public class TodosOperationsAtAllFilterTest extends BaseTest {
     @Test
     public void testDelete() {
 
-        precondition().activeTasks("a", "a to delete").atAllFilter().prepare();
+        Preconditions.precondition().activeTasks("a", "a to delete").atAllFilter().prepare();
 
         page.delete("a to delete");
         page.assertTasks("a");
@@ -45,7 +44,7 @@ public class TodosOperationsAtAllFilterTest extends BaseTest {
     @Test
     public void testComplete() {
 
-        precondition().activeTasks("a", "b").atAllFilter().prepare();
+        Preconditions.precondition().activeTasks("a", "b").atAllFilter().prepare();
 
         page.toggle("a");
         page.assertTasks("a", "b");
@@ -55,7 +54,7 @@ public class TodosOperationsAtAllFilterTest extends BaseTest {
     @Test
     public void testActivate() {
 
-        precondition().completedTasks("a").atAllFilter().prepare();
+        Preconditions.precondition().completedTasks("a").atAllFilter().prepare();
 
         page.toggle("a");
         page.assertTasks("a");
@@ -65,7 +64,7 @@ public class TodosOperationsAtAllFilterTest extends BaseTest {
     @Test
     public void testCompleteAll() {
 
-        precondition().activeTasks("a", "b").atAllFilter().prepare();
+        Preconditions.precondition().activeTasks("a", "b").atAllFilter().prepare();
 
         page.toggleAll();
         page.assertTasks("a", "b");
@@ -75,7 +74,7 @@ public class TodosOperationsAtAllFilterTest extends BaseTest {
     @Test
     public void testClearCompleted() {
 
-        precondition().completedTasks("a", "b", "c").atAllFilter().prepare();
+        Preconditions.precondition().completedTasks("a", "b", "c").atAllFilter().prepare();
 
         page.clearCompleted();
         page.assertNoVisibleTasks();
@@ -84,7 +83,7 @@ public class TodosOperationsAtAllFilterTest extends BaseTest {
     @Test
     public void testSwitchToActive() {
 
-        precondition().activeTasks("a").completedTasks("b").activeTasks("c").atAllFilter().prepare();
+        Preconditions.precondition().activeTasks("a").completedTasks("b").activeTasks("c").atAllFilter().prepare();
 
         page.filterActive();
         page.assertVisibleTasks("a", "c");
@@ -94,7 +93,7 @@ public class TodosOperationsAtAllFilterTest extends BaseTest {
     @Test
     public void testSwitchToCompleted() {
 
-        precondition().activeTasks("a", "b").completedTasks("c", "d").atAllFilter().prepare();
+        Preconditions.precondition().activeTasks("a", "b").completedTasks("c", "d").atAllFilter().prepare();
 
         page.filterCompleted();
         page.assertVisibleTasks("c", "d");
@@ -105,7 +104,7 @@ public class TodosOperationsAtAllFilterTest extends BaseTest {
     @Category(Buggy.class)
     public void testCancelEditByEsc() {
 
-        precondition().completedTasks("a").atAllFilter().prepare();
+        Preconditions.precondition().completedTasks("a").atAllFilter().prepare();
 
         page.startEdit("a", "a edited").pressEscape();
         page.assertVisibleTasks("a");
@@ -115,7 +114,7 @@ public class TodosOperationsAtAllFilterTest extends BaseTest {
     @Test
     public void testConfirmEditByTab() {
 
-        precondition().activeTasks("a").atAllFilter().prepare();
+        Preconditions.precondition().activeTasks("a").atAllFilter().prepare();
 
         page.startEdit("a", "a edited").pressTab();
         page.assertTasks("a edited");

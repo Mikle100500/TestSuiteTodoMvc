@@ -1,4 +1,4 @@
-package todomvc;
+package com.todomvc;
 
 import com.codeborne.selenide.Configuration;
 

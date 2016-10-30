@@ -1,11 +1,11 @@
-package todomvc;
+package com.todomvc;
 
+import com.todomvc.categories.Smoke;
+import com.todomvc.pages.TaskManagerPage;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
-import todomvc.categories.Smoke;
-import todomvc.pages.TaskManagerPage;
 
-import static todomvc.helpers.Preconditions.precondition;
+import static com.todomvc.helpers.Preconditions.precondition;
 
 
 public class TodosE2ETest extends BaseTest{
