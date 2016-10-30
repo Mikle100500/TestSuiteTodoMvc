@@ -2,7 +2,7 @@ package todomvc;
 
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
-import todomvc.Categories.Smoke;
+import todomvc.categories.Smoke;
 import todomvc.pages.TaskManagerPage;
 
 import static todomvc.helpers.Preconditions.precondition;

@@ -2,13 +2,13 @@ package todomvc;
 
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
-import todomvc.Categories.Buggy;
+import todomvc.categories.Buggy;
 import todomvc.pages.TaskManagerPage;
 
 import static todomvc.helpers.Preconditions.precondition;
 
 
-public class TodosOperationsAtAllFilterTest extends BaseTest{
+public class TodosOperationsAtAllFilterTest extends BaseTest {
 
     private TaskManagerPage page = new TaskManagerPage();
 
@@ -100,8 +100,6 @@ public class TodosOperationsAtAllFilterTest extends BaseTest{
         page.assertVisibleTasks("c", "d");
         page.assertItemsLeft(2);
     }
-
-    //buggy test
 
     @Test
     @Category(Buggy.class)
