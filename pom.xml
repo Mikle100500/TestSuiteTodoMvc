@@ -57,7 +57,7 @@
                     </dependency>
                 </dependencies>
                 <configuration>
-                    <test>com.todomvc.testsuites.${suite}}</test>-->
+                    <test>com.todomvc.testsuites.${suite}</test>
                     <systemPropertyVariables>
                         <webdriver.chrome.driver>C://Users//m.pavlenko//Chromedriver//chromedriver.exe</webdriver.chrome.driver>
                         <driver.browser>${driver.browser}</driver.browser>
