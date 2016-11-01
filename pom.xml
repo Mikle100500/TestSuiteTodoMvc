@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>TestSuiteTodoMvc</groupId>
-    <artifactId>TestSuite</artifactId>
+    <groupId>TestSuite</groupId>
+    <artifactId>TestSuiteTodoMvc</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -13,7 +13,7 @@
         <aspectj.version>1.8.9</aspectj.version>
         <compiler.version>1.7</compiler.version>
         <suite>*Test</suite>
-        <driver.browser>firefox</driver.browser>
+        <driver.browser>chrome</driver.browser>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -53,13 +53,13 @@
                     <dependency>
                         <groupId>org.apache.maven.surefire</groupId>
                         <artifactId>surefire-junit47</artifactId>
-                        <version>2.19.1</version>
+                        <version>2.18.1</version>
                     </dependency>
                 </dependencies>
                 <configuration>
-                    <test>com.todomvc.${suite}}</test>
+                    <test>com.todomvc.testsuites.${suite}}</test>-->
                     <systemPropertyVariables>
-                        <webdriver.chrome.driver>C://Users//Mikle//chromedriver_win32//chromedriver.exe</webdriver.chrome.driver>
+                        <webdriver.chrome.driver>C://Users//m.pavlenko//Chromedriver//chromedriver.exe</webdriver.chrome.driver>
                         <driver.browser>${driver.browser}</driver.browser>
                     </systemPropertyVariables>
                 </configuration>
